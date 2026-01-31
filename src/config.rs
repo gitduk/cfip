@@ -28,7 +28,7 @@ pub struct Config {
     pub latency_limit_ms: u64,
 
     /// 每个 IP 测试次数
-    #[arg(long = "ping-times", default_value_t = 4)]
+    #[arg(long = "ping-times", default_value_t = 10)]
     pub ping_times: usize,
 
     /// 下载测试大小 (字节)
