@@ -30,7 +30,7 @@ pub async fn test_latency(ips: &[IpAddr], config: &Config) -> Result<Vec<PingRes
     let pb = ProgressBar::new(total as u64);
     pb.set_style(
         ProgressStyle::default_bar()
-            .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos}/{len} 延迟测试中...")
+            .template("[{elapsed_precise}] {bar:40.green/white} {pos}/{len} 延迟测试中...")
             .unwrap()
             .progress_chars("=> "),
     );

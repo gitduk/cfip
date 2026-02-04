@@ -49,4 +49,28 @@ pub struct Config {
     /// 包含 IPv6
     #[arg(short = '6', long = "ipv6")]
     pub ipv6: bool,
+
+    /// Cloudflare API Token for DNS updates (read from CLOUDFLARE_API_TOKEN env var)
+    #[arg(skip)]
+    pub cloudflare_api_token: Option<String>,
+
+    /// Cloudflare Zone ID for DNS updates (read from CLOUDFLARE_ZONE_ID env var)
+    #[arg(skip)]
+    pub cloudflare_zone_id: Option<String>,
+
+    /// Cloudflare DNS Record Name to update (read from CLOUDFLARE_RECORD_NAME env var)
+    #[arg(skip)]
+    pub cloudflare_record_name: Option<String>,
+
+    /// Cloudflare DNS Record Type (e.g., "A") (read from CLOUDFLARE_RECORD_TYPE env var)
+    #[arg(skip)]
+    pub cloudflare_record_type: Option<String>,
+
+    /// Cloudflare DNS Record Proxied status (read from CLOUDFLARE_PROXIED env var)
+    #[arg(skip)]
+    pub cloudflare_proxied: Option<bool>,
+
+    /// 跳过用户确认，直接更新 Cloudflare DNS 记录
+    #[arg(short = 'q', long = "quiet", default_value_t = false)]
+    pub quiet: bool,
 }
